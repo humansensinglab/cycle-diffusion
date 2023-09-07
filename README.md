@@ -6,9 +6,7 @@ Chen Henry Wu, Fernando De la Torre <br>
 Carnegie Mellon University <br>
 _ICCV 2023_ <br>
 
-[**[Paper link]**](https://arxiv.org/abs/2210.05559) | [**[Diffusers 🧨 implementation]**](https://huggingface.co/docs/diffusers/main/en/api/pipelines/cycle_diffusion) | [**[HuggingFace 🤗 demo]**](https://huggingface.co/spaces/ChenWu98/Stable-CycleDiffusion)
-
-This paper was first on arxiv in Oct, 2022, under the title <br>
+This paper was first on arxiv in Oct, 2022 ([link](https://arxiv.org/abs/2210.05559)), under the title <br>
 **Unifying Diffusion Models' Latent Space, with Applications to CycleDiffusion and Guidance** <br>
 It was rejected by ICLR 2023, and we modified the content and title based on the reviews and resubmitted to ICCV 2023. The original code, discussion, and GitHub issues can be found [here](https://github.com/ChenWu98/cycle-diffusion).
 
@@ -20,7 +18,7 @@ conda env create -f environment.yml
 conda activate generative_prompt
 pip install git+https://github.com/openai/CLIP.git
 ```
-2. Install `torch` and `torchvision` based on your CUDA version. 
+2. Install `torch` and `torchvision` based on your CUDA version.
 3. Install [taming-transformers](https://github.com/CompVis/taming-transformers) by running
 ```shell
 cd ../
