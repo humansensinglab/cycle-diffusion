@@ -8,7 +8,7 @@ _ICCV 2023_ <br>
 
 This paper was first on arxiv in Oct, 2022 ([link](https://arxiv.org/abs/2210.05559)), under the title <br>
 **Unifying Diffusion Models' Latent Space, with Applications to CycleDiffusion and Guidance** <br>
-It was rejected by ICLR 2023, and we modified the content and title based on the reviews and resubmitted to ICCV 2023. The original code, discussion, and GitHub issues can be found [here](https://github.com/ChenWu98/cycle-diffusion).
+We modified the content and title and submitted it to ICCV 2023. The original version of the code, discussion, and GitHub issues can be found [here](https://github.com/ChenWu98/cycle-diffusion).
 
 ## Dependencies
 
