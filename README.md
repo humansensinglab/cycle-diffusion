@@ -1,6 +1,6 @@
 # CycleDiffusion
 
-Code for our paper
+Code for our paper <br>
 **A Latent Space of Stochastic Diffusion Models for Zero-Shot Image Editing and Guidance** <br>
 Chen Henry Wu, Fernando De la Torre <br>
 Carnegie Mellon University <br>
@@ -165,21 +165,6 @@ export CUDA_VISIBLE_DEVICES=7
 export RUN_NAME=translate_text2img256_latentdiff_stochastic_8
 export SEED=42
 nohup python -m torch.distributed.launch --nproc_per_node 1 --master_port 1412 main.py --seed $SEED --cfg experiments/$RUN_NAME.cfg --run_name $RUN_NAME$SEED --logging_strategy steps --logging_first_step true --logging_steps 4 --evaluation_strategy steps --eval_steps 50 --metric_for_best_model CLIPEnergy --greater_is_better false --save_strategy steps --save_steps 50 --save_total_limit 1 --load_best_model_at_end --gradient_accumulation_steps 4 --num_train_epochs 0 --adafactor false --learning_rate 1e-3 --do_eval --output_dir output/$RUN_NAME$SEED --overwrite_output_dir --per_device_train_batch_size 1 --per_device_eval_batch_size 16 --eval_accumulation_steps 4 --ddp_find_unused_parameters true --verbose true > $RUN_NAME$SEED.log 2>&1 &
-```
-
-### Customized use for zero-shot image-to-image translation
-1. Add your own image path and source-target text pairs at the end of [this json file](./data/translate-text.json). You can add as many as you want.
-2. Suggested hyperparameter tuning in [this config file](./config/experiments/translate_text2img256_stable_diffusion_stochastic_custom.cfg)
-  - decoder_unconditional_guidance_scales: larger value means more weight on the target text
-  - skip_steps: larger value means more similar to the original image
-  - random seed: different random seed will generate different results
-3. Note that each combination of `decoder_unconditional_guidance_scales` $\times$ `skip_steps` will be enumerated, and the best one is returned. 
-4. Run the following command to generate the image. Outputs will be saved in the `output` folder.
-```shell
-export CUDA_VISIBLE_DEVICES=0
-export RUN_NAME=translate_text2img256_stable_diffusion_stochastic_custom
-export SEED=42
-nohup python -m torch.distributed.launch --nproc_per_node 1 --master_port 1426 main.py --seed $SEED --cfg experiments/$RUN_NAME.cfg --run_name $RUN_NAME$SEED --logging_strategy steps --logging_first_step true --logging_steps 4 --evaluation_strategy steps --eval_steps 50 --metric_for_best_model CLIPEnergy --greater_is_better false --save_strategy steps --save_steps 50 --save_total_limit 1 --load_best_model_at_end --gradient_accumulation_steps 4 --num_train_epochs 0 --adafactor false --learning_rate 1e-3 --do_eval --output_dir output/$RUN_NAME$SEED --overwrite_output_dir --per_device_train_batch_size 1 --per_device_eval_batch_size 4 --eval_accumulation_steps 4 --ddp_find_unused_parameters true --verbose true > $RUN_NAME$SEED.log 2>&1 &
 ```
 
 ### Unpaired image-to-image translation with diffusion models trained on two domains
