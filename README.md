@@ -1,6 +1,6 @@
 # CycleDiffusion
 
-Code for our paper <br>
+Official code for our paper <br>
 **A Latent Space of Stochastic Diffusion Models for Zero-Shot Image Editing and Guidance** <br>
 Chen Henry Wu, Fernando De la Torre <br>
 Carnegie Mellon University <br>
